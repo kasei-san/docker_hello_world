@@ -1,0 +1,24 @@
+{
+    "serviceName": "hello_world",
+    "cluster": "hello_world",
+    "taskDefinition": "docker_hello_world:2",
+    "launchType": "FARGATE",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:853753324957:targetgroup/demo/6dcf904759346b7d",
+            "containerName": "docker_hello_world_webserver",
+            "containerPort": 80
+        }
+    ],
+    "networkConfiguration": {
+      "awsvpcConfiguration":{
+        "subnets": [
+          "subnet-0c0709a0e7f78f4b1",
+          "subnet-07558e35220a5e1a5"
+        ],
+        "securityGroups": ["sg-08c5922a1c06c3d23"],
+        "assignPublicIp": "DISABLED"
+      }
+    },
+    "desiredCount": 1
+}

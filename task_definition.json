@@ -1,0 +1,23 @@
+{
+    "family": "docker_hello_world",
+    "containerDefinitions": [
+        {
+            "name": "docker_hello_world_webserver",
+            "image": "853753324957.dkr.ecr.us-east-1.amazonaws.com/docker_hello_world_webserver:a86fd25",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "memoryReservation": 512
+        }
+    ],
+    "requiresCompatibilities": ["FARGATE"],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::853753324957:role/ecsTaskExecutionRole"
+}
