@@ -1,4 +1,8 @@
 version: "3"
+phases:
+  install:
+    runtime-versions:
+      docker: 18
 services:
   webserver:
     build: "."
