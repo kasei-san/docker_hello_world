@@ -21,7 +21,4 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - curl -fs https://0ym4rbvub6.execute-api.us-east-1.amazonaws.com/production/create?branch_name=${BRANCH_NAME}&commit_hash=${CODEBUILD_RESOLVED_SOURCE_VERSION}
-      - result=$?
-      - echo ${result}
-      - exit ${result}
+      - curl -s https://0ym4rbvub6.execute-api.us-east-1.amazonaws.com/production/create?branch_name=${BRANCH_NAME}&commit_hash=${CODEBUILD_RESOLVED_SOURCE_VERSION}
