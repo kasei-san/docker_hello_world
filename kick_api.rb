@@ -10,4 +10,5 @@ puts "Kick API: #{uri.to_s}"
 res = Net::HTTP.get_response(uri)
 
 puts "Responce code: #{res.code}"
+puts "Responce body: #{res.body}"
 res.value # 200以外なら例外を返す
